@@ -6,6 +6,7 @@
     --Color-Primario: #fff;
     --Color-Secundario: #000;
     --Color-Destacado: crimson;
+    --gris: #757575;
 }
 
 * {
@@ -38,12 +39,23 @@
 }
 
 .white {
-    color: var(--Color-Primario);
-    background-color: var(--Color-Secundario);
+    color: var(--Color-Secundario);
+    background-color: var(--Color-Primario);
 }
 
 .destacado {
     color: var(--Color-Destacado);
+}
+
+/*espaciado común*/
+
+.text-pad {
+    width: 50%;
+    min-width: 380px;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /*BOTONES*/
@@ -69,9 +81,23 @@
     transition: 0.5s;
 }
 
+.btn-prim {
+    color: var(--Color-Primario);
+    border: 1px solid var(--Color-Destacado);
+    background-color: var(--Color-Destacado);
+}
+
+.btn-prim:hover {
+    background-color: var(--Color-Secundario);
+    color: var(--Color-Primario);
+    transition: 0.5s;
+}
+
 /*BODY*/
 
 body {
+    display: flex;
+    flex-direction: column;
     animation: aparicion 4s;
 }
 
@@ -82,6 +108,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+
+    z-index: 100;
 }
 
 #sobremi {
@@ -89,7 +117,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    background-position: left 40%;
 
+    z-index: 0;
 }
 
 
@@ -160,4 +190,159 @@ h1 {
 
 h5 {
     font-weight: 300;
+}
+
+/* centrar página */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info h2 {
+    font-size: 2.2rem;
+}
+
+.info p {
+    font-weight: 300;
+}
+
+.info p:first-of-type {
+    margin-top: 20px;
+}
+
+.info p:last-of-type {
+    margin-bottom: 10px;
+}
+
+/* Artículos */
+
+.articulos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modulo {
+    flex: 1 0 20%;
+    padding: 20px;
+    margin: 2vw;
+    min-width: 180px;
+    width: 450px;
+    height: 250px;
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.65);
+    background-color: var(--Color-Secundario);
+    color: var(--Color-Primario);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modulo:hover {
+    color: var(--Color-Secundario);
+    background-color: var(--Color-Destacado);
+    transition: 0.5s;
+}
+
+.modulo p {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Flecha para navegar */
+
+#over {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--Color-Secundario);
+    border-radius: 5px;
+    width: 32px;
+    height: 35px;
+    z-index: 10;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: 0.5s;
+}
+
+#over:hover {
+    background-color: var(--Color-Destacado);
+    transition: 0.5s;
+}
+
+#over img {
+    width: 30px;
+    height: 35px;
+}
+
+/* FORMULARIO */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 450px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+label {
+    margin-top: 10px;
+    color: var(--Color-Primario);
+}
+
+input {
+    height: 40px;
+    border: none;
+}
+
+input, textarea {
+    border-radius: 5px;
+}
+
+form legend {
+    color: var(--Color-Primario);
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    cursor: pointer;
+}
+
+form .button {
+    margin-top: 45px;
+    align-self: center;
+    transition: 1s;
+}
+
+.form h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 479px) {
+
+    nav.menu ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    nav.menu h3 {
+        display: none;
+    }
 }
