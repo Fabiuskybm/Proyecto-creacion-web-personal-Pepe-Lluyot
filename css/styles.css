@@ -3,10 +3,10 @@
 
 :root {
 
-    --Color-Primario: #fff;
-    --Color-Secundario: #000;
-    --Color-Destacado: crimson;
-    --gris: #757575;
+    --Color-Primario: hsl(0, 0%, 100%);
+    --Color-Secundario: hsl(0, 0%, 0%);
+    --Color-Destacado: hsl(348, 83%, 47%);
+    --gris: hsl(0, 0%, 46%);
 }
 
 * {
